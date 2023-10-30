@@ -18,7 +18,7 @@ echo "<thead><td>CODIGO</td><td>TITULO</td><td>DATA DA PUBLICAÇÃO</td><td>CATE
 
 while(list($ID, $TITULO, $DATA_PUBLICACAO, $NOME_CATEGORIA, $CONTEUDO) = mysqli_fetch_row($resultado)) {
     echo "<tr>
-        <td>$ID</td><td>$TITULO</td><td>$DATA_PUBLICACAO</td><td>$NOME_CATEGORIA</td><td>$CONTEUDO</td>
+        <td>$ID</td><td>$TITULO</td><td>", date('d/m/Y', strtotime($DATA_PUBLICACAO)), "</td><td>$NOME_CATEGORIA</td><td>$CONTEUDO</td>
     </tr>";
 }
 
