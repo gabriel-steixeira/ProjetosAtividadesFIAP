@@ -1,8 +1,28 @@
-<style>
-    table, tr, td {
-        border: solid 1px black;
-    }
-</style>
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="listar.css">
+<title>CYBERLAKE</title>
+
+<body>
+    <div class="logo">
+        <img src="../assets/img/logo.png" alt="imagem com logotipo da empresa ao lado do laço símbolo do autismo" class="logo">
+    </div>
+
+    <div class="data">
+        <?php
+        date_default_timezone_set('America/Sao_Paulo');
+        setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
+        $dataAtual = strftime('%d de %B de %Y - %H:%M');
+        echo $dataAtual;
+        ?>
+    </div>
+</body>
+
+</html>
+
 <?php 
 //Importando arquivo de conexão com o banco de dados
 require_once("../conexao.php");
