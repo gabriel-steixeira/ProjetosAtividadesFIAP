@@ -1,0 +1,51 @@
+body {
+    margin: 2;
+    padding: 2;
+    position: relative;
+}
+
+.logo {
+    width: 220px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.data {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    font-size: 15px;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar {
+    text-align: center;
+    margin-top: -2.5%;
+    font-size: 20px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 10;
+    margin: 0;
+    display: inline-block;
+}
+
+.navbar li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+table, tr, td {
+    border: solid 1px black;
+}
