@@ -21,7 +21,8 @@ if ($result && $row = mysqli_fetch_assoc($result)) {
     $titulo = $row['TITULO'];
     $data = date('d/m/Y', strtotime($row['DATA_PUBLICACAO']));
     $conteudo = $row['CONTEUDO'];
-    $imagem = "../assets/img/img4.jpg" . $row['IMAGEM'];
+    $imagem = "../assets/img/img4.jpg"/*. $row['IMAGEM']*/;
+    var_dump($row['IMAGEM']);
 } else {
     echo "Post não encontrado.";
 }
@@ -63,7 +64,7 @@ if ($result && $row = mysqli_fetch_assoc($result)) {
     </nav>
 
     <div class="search-container">
-        <form action="pagina-de-busca.php" method="GET">
+        <form action="busca.php" method="GET">
             <input type="text" name="term" placeholder="Digite sua busca">
             <button type="submit">BUSCA</button>
         </form>

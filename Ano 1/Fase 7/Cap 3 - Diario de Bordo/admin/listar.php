@@ -43,4 +43,6 @@ while (list($ID, $TITULO, $DATA_PUBLICACAO, $NOME_CATEGORIA, $CONTEUDO) = mysqli
 }
 
 echo "</table>";
+
+mysqli_close($conexao);
 ?>

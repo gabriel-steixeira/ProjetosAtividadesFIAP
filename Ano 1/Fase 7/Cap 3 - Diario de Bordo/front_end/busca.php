@@ -17,7 +17,21 @@ $termoBusca = mysqli_real_escape_string($conn, $termoBusca);
 
 // Consultar o banco de dados para obter os resultados da busca apenas no campo TITULO
 $sql = "SELECT * FROM posts WHERE TITULO LIKE '%$termoBusca%'";
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($conn, $sql); 
+
+//Se não retornar registros, realiza tentativa com tudo em Maiúsculo
+if (mysqli_num_rows($result) == 0) {
+    $termoBusca = strtoupper($termoBusca);
+    $sql = "SELECT * FROM posts WHERE TITULO LIKE '%$termoBusca%'";
+    $result = mysqli_query($conn, $sql); 
+}
+
+//Se não retornar registros, realiza tentativa com tudo em minúsculo
+if (mysqli_num_rows($result) == 0) {
+    $termoBusca = strtolower($termoBusca);
+    $sql = "SELECT * FROM posts WHERE TITULO LIKE '%$termoBusca%'";
+    $result = mysqli_query($conn, $sql); 
+}
 ?>
 
 <!DOCTYPE html>
@@ -73,6 +87,7 @@ $result = mysqli_query($conn, $sql);
             // Exibir resultados da busca
             echo '<div class="resultado-busca">';
             echo '<h2>' . $row['TITULO'] . '</h2>';
+            echo '<p>' . mb_strimwidth($row['CONTEUDO'], 0, 30) . ' ... <a href="item.php?id=' . $row['ID'] . '">leia mais.</a>' . '</p>';
             echo '</div>';
         }
     } else {
