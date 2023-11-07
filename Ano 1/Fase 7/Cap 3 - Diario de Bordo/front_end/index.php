@@ -21,7 +21,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     // Loop através dos resultados e adiciona as notícias ao array
     while ($row = mysqli_fetch_assoc($result)) {
         $noticias[] = array(
-            "imagem" => "../assets/img/img4.jpg" . $row['IMAGEM'],
+            "imagem" => "../assets/img/img4.jpg"/* . $row['IMAGEM']*/,
             "titulo" => $row['TITULO'],
             "data" => date('d/m/Y', strtotime($row['DATA_PUBLICACAO'])),
             "previa" => substr($row['CONTEUDO'], 0, 150) . '...',
