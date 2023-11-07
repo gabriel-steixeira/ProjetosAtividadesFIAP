@@ -41,7 +41,6 @@ if (mysqli_num_rows($result) == 0) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
     <title>Resultado da Busca</title>
 </head>
 
@@ -62,10 +61,10 @@ if (mysqli_num_rows($result) == 0) {
 
     <nav class="navbar">
         <ul>
-            <li><a href="#">CATEGORIA 1</a></li>
-            <li><a href="#">CATEGORIA 2</a></li>
-            <li><a href="#">CATEGORIA 3</a></li>
-            <li><a href="#">CATEGORIA 4</a></li>
+            <li><a href="index.php?categoria=1">CATEGORIA 1</a></li>
+            <li><a href="index.php?categoria=2">CATEGORIA 2</a></li>
+            <li><a href="index.php?categoria=3">CATEGORIA 3</a></li>
+            <li><a href="index.php?categoria=4">CATEGORIA 4</a></li>
         </ul>
     </nav>
 
@@ -100,5 +99,73 @@ if (mysqli_num_rows($result) == 0) {
     ?>
 
 </body>
+
+<style>
+
+    body {
+        margin: 0;
+        padding: 10px 10px;
+        position: relative;
+    }
+
+    .logo {
+        width: 220px;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+    .data {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        font-size: 15px;
+        padding: 10px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .navbar {
+        text-align: center;
+        margin-top: -1%;
+        font-size: 20px;
+    }
+
+    .navbar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+    }
+
+    .navbar li {
+        display: inline-block;
+        margin-right: 15px;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+
+    .search-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .search-container input {
+        padding: 10px;
+        margin-right: 10px;
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .search-container button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+</style>
 
 </html>
